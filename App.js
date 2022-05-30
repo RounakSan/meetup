@@ -1,20 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {Text, Image, ImageBackground, View, StyleSheet} from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+const App = () => {
+  return(
+    <View style={styles.pageContainer}>
+      <View style={styles.card}>
+        <ImageBackground
+          source={{uri: 'https://picsum.photos/200'}}
+          style={styles.image}
+          >
+          <View style={styles.cardInner}>
+            <Text style={styles.name}>Soumya Hazra</Text>
+            <Text style={styles.bio}>A dude with rocket is looking for a gal with fuel</Text>
+          </View>
+        </ImageBackground>
+      </View>
+    </View>  
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+  pageContainer: { 
     justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
-});
+
+  card : {  
+      width: '95%',
+      height: '70%',
+      borderRadius: 10,
+  },
+
+  image: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+    overflow: 'hidden',
+    justifyContent: 'flex-end',
+   
+
+  },
+  name : {
+    fontSize : 30,
+    fontWeight: 'bold',
+
+    
+  },
+  bio : {
+    fontSize : 20,    
+    
+
+
+  },
+  cardInner: {
+    padding: 10,
+    marginHorizontal : 5,
+  },
+
+})
+
+export default App;
