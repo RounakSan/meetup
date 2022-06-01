@@ -5,7 +5,6 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 import colors from '../components/themes/colors';
 
-
 export default function MyEventsScreen() {
   return (
       <SafeAreaView>
